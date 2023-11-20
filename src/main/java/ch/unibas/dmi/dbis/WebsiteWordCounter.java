@@ -51,6 +51,8 @@ public class WebsiteWordCounter {
          *
          * Not sure if this is right. But I was too lazy to check, because
          * I might need a debugger here.
+         * 
+         * -> It now works correctly.
          */
         int size = topK.size();
         for (int i = k; i < size; i++) {
