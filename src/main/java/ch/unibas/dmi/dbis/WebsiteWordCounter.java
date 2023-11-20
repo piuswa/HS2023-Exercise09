@@ -29,13 +29,13 @@ public class WebsiteWordCounter {
      */
     public List<Pair<String,Integer>> topKWordsOnWebsite(String url, int k) {
         final String website = this.loadWebsite(url);
-        //LOGGER.info("Website downloaded successfully!");
+        LOGGER.info("Website downloaded successfully!");
 
         final String[] tokens = this.tokenize(website);
-        //LOGGER.info("Entries tokenized successfully!");
+        LOGGER.info("Entries tokenized successfully!");
 
         final Map<String,Integer> counts = this.count(tokens);
-        //LOGGER.info("Count completed! Number of words found: {}", counts.size());
+        LOGGER.info("Count completed! Number of words found: {}", counts.size());
 
         /* Prepare list of entries. */
         final List<Pair<String,Integer>> topK = new LinkedList<>();
@@ -52,8 +52,9 @@ public class WebsiteWordCounter {
          * Not sure if this is right. But I was too lazy to check, because
          * I might need a debugger here.
          */
-        for (int i = k; i < topK.size(); i++) {
-            topK.remove(i);
+        int size = topK.size();
+        for (int i = k; i < size; i++) {
+            topK.remove(k);
         }
         return topK;
     }

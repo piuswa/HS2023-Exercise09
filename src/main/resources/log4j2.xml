@@ -4,10 +4,13 @@
     <Appender type="Console" name="STDOUT">
       <Layout type="PatternLayout" pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %m%n"/>
     </Appender>
+    <File name="FileLogger" fileName="logs/app.log">
+        <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %m%n"/>
+    </File>
   </Appenders>
   <Loggers>
-    <Root level="info">
-      <AppenderRef ref="STDOUT"/>
+    <Root level="warn"> <!--if the level is set to warn only warn and error logging messages will show up-->
+      <AppenderRef ref="FileLogger"/>
     </Root>
   </Loggers>
 </Configuration>
